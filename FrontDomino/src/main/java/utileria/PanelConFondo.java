@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package inicio;
+package utileria;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -15,10 +11,10 @@ import javax.swing.JPanel;
  */
 public class PanelConFondo extends JPanel{
 
-    private Image fondo;
+    private final Image fondo;
     
     public PanelConFondo(String url) {
-        fondo = new ImageIcon(url).getImage();
+        fondo = new ImageIcon(PanelConFondo.class.getResource(url)).getImage();
         setOpaque(false);
     }
     
