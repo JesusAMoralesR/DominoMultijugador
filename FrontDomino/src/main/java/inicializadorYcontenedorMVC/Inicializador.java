@@ -3,7 +3,6 @@ package inicializadorYcontenedorMVC;
 import inicio.ControladorInicio;
 import inicio.ModeloInicio;
 import inicio.VistaInicio;
-import java.awt.Font;
 
 /**
  * Clase que servíra para inicializar todos los MVC del juego y los pondra en contenedores para que la logica pueda acceder a ellos 

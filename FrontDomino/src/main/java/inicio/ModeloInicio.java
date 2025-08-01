@@ -57,6 +57,12 @@ public class ModeloInicio {
             observadorDeBoton.actualizar();
         }
     }
+    
+    public void ejecutarBotonVolver(){
+        if (observadorDeBoton != null) {
+            observadorDeBoton.actualizar();
+        }
+    }
 
     public String getRutaFondo() {
         return rutaFondo;

@@ -15,6 +15,9 @@ public class ControladorInicio {
         this.modelo = modelo;
         this.inicio = inicio;
         inicio.setObserverJugar(new AccionJugar());
+        inicio.setObserverSalir(new AccionSalir());
+        inicio.setObserverVolver(new AccionVolver());
+        
         
     }
     
@@ -32,9 +35,38 @@ public class ControladorInicio {
         }
     }
     
-    private class AccionSalir{}
+    private class AccionSalir implements IObserver{
+
+        @Override
+        public void actualizar() {  
+            System.exit(0);
+        }
+    }
     
-    private class AccionCrearSala{}
+    private class AccionVolver implements IObserver{
+
+        @Override
+        public void actualizar() {
+            modelo.setTextoBtn1("jugar");
+            modelo.setTextoBtn2("Salir");
+            modelo.setEstadoBotones(true);
+            modelo.ejecutarBotonVolver();
+        }
+    }
     
-    private class AccionUnirseASala{}
+    private class AccionCrearSala implements IObserver{
+
+        @Override
+        public void actualizar() {
+
+        }
+    }
+    
+    private class AccionUnirseASala implements IObserver{
+
+        @Override
+        public void actualizar() {
+
+        }
+    }
 }
