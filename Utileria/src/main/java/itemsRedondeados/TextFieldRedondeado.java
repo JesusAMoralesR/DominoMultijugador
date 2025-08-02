@@ -2,31 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package utileria;
+package itemsRedondeados;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
-import javax.swing.JButton;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 /**
  *
  * @author tacot
  */
-public class BotonRedondeado extends JButton{
-    
-    private final int arcWidth = 30;
-    private final int arcHeight = 30;
-    
-    public BotonRedondeado (){
-    
+public class TextFieldRedondeado extends JTextField{
+    private int arcWidth = 30;
+    private int arcHeight = 30;
+
+    public TextFieldRedondeado(int columns) {
+        super(columns);
         setOpaque(false); 
         setBorder(new EmptyBorder(10, 10, 10, 10)); // Espaciado interno
     }
-    
+
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g.create();
@@ -56,5 +55,4 @@ public class BotonRedondeado extends JButton{
         g2.draw(new RoundRectangle2D.Float(0, 0, getWidth() - 1, getHeight() - 1, arcWidth, arcHeight));
         g2.dispose();
     }
-    
 }

@@ -1,12 +1,13 @@
 package inicio;
 
+import contenedorMVC.Icomponente;
 import observers.IObserver;
 
 /**
  *
  * @author tacot
  */
-public class ControladorInicio {
+public class ControladorInicio implements Icomponente{
 
     private final ModeloInicio modelo;
     private final VistaInicio inicio;

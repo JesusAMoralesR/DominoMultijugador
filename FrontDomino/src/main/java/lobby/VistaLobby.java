@@ -4,7 +4,7 @@
  */
 package lobby;
 
-import utileria.PanelConFondo;
+import ItemsConFondo.PanelConFondo;
 
 
 /**

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package mensajesYAlertas;
+package mensajeDerrota;
 
+import mensajeVictoria.VistaMensajeVictoria;
 import com.formdev.flatlaf.FlatLightLaf;
 import inicio.VistaInicio;
 import java.awt.Font;
@@ -12,8 +13,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import utileria.BotonRedondeado;
-import utileria.PanelConFondo;
+import itemsRedondeados.BotonRedondeado;
+import ItemsConFondo.PanelConFondo;
 
 /**
  *

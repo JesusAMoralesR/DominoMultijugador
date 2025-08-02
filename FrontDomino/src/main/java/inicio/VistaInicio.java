@@ -1,7 +1,8 @@
 package inicio;
 
-import utileria.PanelConFondo;
+import ItemsConFondo.PanelConFondo;
 import com.formdev.flatlaf.FlatLightLaf;
+import contenedorMVC.Icomponente;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontFormatException;
@@ -15,7 +16,7 @@ import observers.IObserver;
  *
  * @author tacot
  */
-public class VistaInicio extends javax.swing.JFrame {
+public class VistaInicio extends javax.swing.JFrame implements Icomponente{
 
     private final ModeloInicio modelo;
     private final String urlFondo;

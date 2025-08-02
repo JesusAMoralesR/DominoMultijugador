@@ -1,12 +1,13 @@
 package inicio;
 
+import contenedorMVC.Icomponente;
 import observers.IObserver;
 
 /**
  *
  * @author tacot
  */
-public class ModeloInicio {
+public class ModeloInicio implements Icomponente{
     private Boolean estadoBotones;
     private String textoBtn1;
     private String textoBtn2;

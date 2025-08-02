@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import observers.IObserver;
 
 /**
  *
@@ -14,7 +15,11 @@ public class ModeloUnirseASala {
 
     private String rutaFondo;
     private String rutaFuente;
-    private final List<Image> imagenes = new LinkedList<>();
+    private String url;
+    private IObserver observadorCrearSala;
+    private IObserver observadorCancelar;
+    private IObserver observadorAvatar;
+    private Image imagen;
 
     public ModeloUnirseASala() {
 
@@ -26,15 +31,10 @@ public class ModeloUnirseASala {
 
         rutaFondo = "/imagenes/fondo/fondoPrincipal.png";
         rutaFuente = "/fuentes/InknutAntiqua-Regular.ttf";
-        String url = "/imagenes/avatares/avt";
+        url = "/imagenes/avatares/avt";
 
-        for (int i = 1; i < 7; i++) {
-
-            imagenes.add(new ImageIcon(ModeloCrearSala.class.getResource(url + i + ".png")).getImage());
-            System.out.println(imagenes.get(i - 1).hashCode());
-            
-        }
-
+        imagen = new ImageIcon(ModeloCrearSala.class.getResource(url + 1 + ".png")).getImage();
+        
     }
 
     public String getRutaFondo() {
@@ -52,8 +52,38 @@ public class ModeloUnirseASala {
     public void setRutaFuente(String rutaFuente) {
         this.rutaFuente = rutaFuente;
     }
-    
-    public List<Image> getImagenes() {
-        return imagenes;
+
+    public void CambiarAvatar(int index) {
+        imagen = new ImageIcon(ModeloCrearSala.class.getResource(url +index + ".png")).getImage();
+        ejecutarObservadorAvatar();
     }
+
+    public Image getImagen() {
+        return imagen;
+    }
+
+    public void setObservadorCrearSala(IObserver observadorCrearSala) {
+        this.observadorCrearSala = observadorCrearSala;
+    }
+
+    public void setObservadorCanselar(IObserver observadorCancelar) {
+        this.observadorCancelar = observadorCancelar;
+    }
+
+    public void setObservadorAvatar(IObserver observadorAvatar) {
+        this.observadorAvatar = observadorAvatar;
+    }
+    
+    public void ejecutarObservadorCrearSala(){
+        this.observadorCrearSala.actualizar();
+    }
+    
+    public void ejecutarObservadorCancelar(){
+        this.observadorCancelar.actualizar();
+    }
+    
+    public void ejecutarObservadorAvatar(){
+        this.observadorAvatar.actualizar();
+    }
+
 }

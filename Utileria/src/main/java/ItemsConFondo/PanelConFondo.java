@@ -1,4 +1,4 @@
-package utileria;
+package ItemsConFondo;
 
 import java.awt.Graphics;
 import java.awt.Image;

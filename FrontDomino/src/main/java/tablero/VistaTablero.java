@@ -4,7 +4,7 @@
  */
 package tablero;
 
-import utileria.PanelConFondo;
+import ItemsConFondo.PanelConFondo;
 
 /**
  *

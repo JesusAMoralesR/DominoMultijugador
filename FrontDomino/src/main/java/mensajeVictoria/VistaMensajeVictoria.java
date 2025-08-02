@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package mensajesYAlertas;
+package mensajeVictoria;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import inicio.VistaInicio;
@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import utileria.BotonRedondeado;
-import utileria.PanelConFondo;
+import itemsRedondeados.BotonRedondeado;
+import ItemsConFondo.PanelConFondo;
 
 /**
  *
@@ -87,7 +87,6 @@ public class VistaMensajeVictoria extends javax.swing.JDialog {
         btnVolver.setBorderPainted(false);
         btnVolver.setContentAreaFilled(false);
         btnVolver.setDefaultCapable(false);
-        btnVolver.setOpaque(false);
         btnVolver.setRequestFocusEnabled(false);
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
