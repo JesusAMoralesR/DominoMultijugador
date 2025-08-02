@@ -1,12 +1,13 @@
 package unirseASala;
 
+import contenedorMVC.Icomponente;
 import observers.IObserver;
 
 /**
  *
  * @author tacot
  */
-public class ControladorUnirseASala {
+public class ControladorUnirseASala implements Icomponente{
     
     private final VistaUnirseASala vista;
     private final ModeloUnirseASala modelo;

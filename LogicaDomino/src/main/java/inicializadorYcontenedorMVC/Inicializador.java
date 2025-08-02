@@ -18,15 +18,15 @@ import unirseASala.VistaUnirseASala;
  */
 public class Inicializador {
     
-    public Inicializador(){}
+    private GestorDeContenedores gestor;
     
-    public static void main(String[] args) {
-        inicializarMVC();
+    public Inicializador(){
+    
+        gestor = new GestorDeContenedores();
+
     }
-    
-    public static void inicializarMVC(){
-        
-        GestorDeContenedores gestor = new GestorDeContenedores();
+  
+    public void inicializarMVC(){
         
         ModeloInicio modeloInicio = new ModeloInicio();
         VistaInicio vistaInicio = new VistaInicio(modeloInicio);
@@ -45,11 +45,17 @@ public class Inicializador {
         ModeloUnirseASala modeloUnirseASala = new ModeloUnirseASala();
         VistaUnirseASala vistaUnirseASala = new VistaUnirseASala();
         ControladorUnirseASala controladorUnirseASala = new ControladorUnirseASala(vistaUnirseASala, modeloUnirseASala);
-        ContenedorMVC contenedoUnirseASala = new ContenedorMVC(modeloInicio, vistaInicio, controladorInicio);
+        ContenedorMVC contenedoUnirseASala = new ContenedorMVC(modeloUnirseASala, vistaUnirseASala, controladorUnirseASala);
         gestor.agregarContenedor("unirseSala", contenedoUnirseASala);
         
         
                 
         
     }
+
+    public GestorDeContenedores getGestor() {
+        return gestor;
+    }
+    
+    
 }

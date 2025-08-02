@@ -14,6 +14,6 @@ public class Domino {
     public static void main(String[] args) {
         LogicaDomino domino = new LogicaDomino();
         
-        domino.inicializarClases();
+        domino.run();
     }
 }

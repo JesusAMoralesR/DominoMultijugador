@@ -1,5 +1,6 @@
 package unirseASala;
 
+import contenedorMVC.Icomponente;
 import crearSala.ModeloCrearSala;
 import java.awt.Image;
 import java.util.LinkedList;
@@ -11,7 +12,7 @@ import observers.IObserver;
  *
  * @author tacot
  */
-public class ModeloUnirseASala {
+public class ModeloUnirseASala implements Icomponente{
 
     private String rutaFondo;
     private String rutaFuente;

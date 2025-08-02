@@ -1,7 +1,6 @@
 package LogicaPrincipal;
 
-import fachada.FachadaInicializador;
-import fachada.IFachadaInicializador;
+import inicializadorYcontenedorMVC.Inicializador;
 
 /**
  *
@@ -9,13 +8,17 @@ import fachada.IFachadaInicializador;
  */
 public class LogicaDomino {
     
-    private IFachadaInicializador fachadaInicializador;
-    
-    public LogicaDomino(){
-        fachadaInicializador = new FachadaInicializador();
+    private final Inicializador inicializador;
+
+    public LogicaDomino() {
+        inicializador = new Inicializador();
     }
     
     public void inicializarClases(){
-        fachadaInicializador.inicializarClases();
+        inicializador.inicializarMVC();
+    }
+    
+    public void run(){
+        inicializarClases();
     }
 }

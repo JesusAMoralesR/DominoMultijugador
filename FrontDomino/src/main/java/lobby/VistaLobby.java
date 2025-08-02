@@ -37,20 +37,124 @@ private final ModeloLobby modelo;
     private void initComponents() {
 
         jPanel1 = new PanelConFondo(urlFondo);
+        txtAvatarJugador2 = new javax.swing.JLabel();
+        txtAvatarJugador1 = new javax.swing.JLabel();
+        txtAvatarJugador3 = new javax.swing.JLabel();
+        txtAvatarJugador4 = new javax.swing.JLabel();
+        btnIniciarPartida = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        txtJugador1 = new javax.swing.JLabel();
+        txtJugador2 = new javax.swing.JLabel();
+        txtJugador3 = new javax.swing.JLabel();
+        txtJugador4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1024, 624));
 
+        txtAvatarJugador2.setBackground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador2.setForeground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avatares/avt2.png"))); // NOI18N
+        txtAvatarJugador2.setPreferredSize(new java.awt.Dimension(130, 130));
+
+        txtAvatarJugador1.setBackground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador1.setForeground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avatares/avt1.png"))); // NOI18N
+        txtAvatarJugador1.setPreferredSize(new java.awt.Dimension(130, 130));
+
+        txtAvatarJugador3.setBackground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador3.setForeground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avatares/avt5.png"))); // NOI18N
+        txtAvatarJugador3.setPreferredSize(new java.awt.Dimension(130, 130));
+
+        txtAvatarJugador4.setBackground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador4.setForeground(new java.awt.Color(255, 255, 255));
+        txtAvatarJugador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avatares/avt3.png"))); // NOI18N
+        txtAvatarJugador4.setPreferredSize(new java.awt.Dimension(130, 130));
+
+        btnIniciarPartida.setText("Iniciar partida");
+
+        btnRegresar.setText("Regresar");
+
+        txtJugador1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtJugador1.setText("jLabel5");
+
+        txtJugador2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtJugador2.setText("jLabel5");
+
+        txtJugador3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtJugador3.setText("jLabel5");
+
+        txtJugador4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtJugador4.setText("jLabel5");
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("Codigo de sala:");
+
+        txtCodigo.setText("jLabel9");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIniciarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(373, 373, 373))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtJugador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtAvatarJugador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(100, 100, 100)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtAvatarJugador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtJugador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(100, 100, 100)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtJugador3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtAvatarJugador3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(100, 100, 100)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtAvatarJugador4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtJugador4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(141, 141, 141)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtJugador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtJugador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtJugador3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtJugador4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtAvatarJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAvatarJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAvatarJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAvatarJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(btnIniciarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,6 +197,18 @@ private final ModeloLobby modelo;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIniciarPartida;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel txtAvatarJugador1;
+    private javax.swing.JLabel txtAvatarJugador2;
+    private javax.swing.JLabel txtAvatarJugador3;
+    private javax.swing.JLabel txtAvatarJugador4;
+    private javax.swing.JLabel txtCodigo;
+    private javax.swing.JLabel txtJugador1;
+    private javax.swing.JLabel txtJugador2;
+    private javax.swing.JLabel txtJugador3;
+    private javax.swing.JLabel txtJugador4;
     // End of variables declaration//GEN-END:variables
 }

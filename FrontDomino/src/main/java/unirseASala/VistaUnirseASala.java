@@ -10,7 +10,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import itemsRedondeados.BotonRedondeado;
 import ItemsConFondo.PanelConFondo;
-import crearSala.VistaCrearSala;
+import contenedorMVC.Icomponente;
 import itemsRedondeados.TextFieldRedondeado;
 import javax.swing.ImageIcon;
 import observers.IObserver;
@@ -19,7 +19,7 @@ import observers.IObserver;
  *
  * @author tacot
  */
-public class VistaUnirseASala extends javax.swing.JFrame {
+public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaUnirseASala.class.getName());
     private final ModeloUnirseASala modelo;
@@ -106,7 +106,8 @@ public class VistaUnirseASala extends javax.swing.JFrame {
 
         btnCrear.setBackground(new java.awt.Color(192, 163, 115));
         btnCrear.setForeground(new java.awt.Color(255, 255, 255));
-        btnCrear.setText("Crear");
+        btnCrear.setText("Unirse");
+        btnCrear.setToolTipText("");
         btnCrear.setBorderPainted(false);
         btnCrear.setContentAreaFilled(false);
         btnCrear.setDefaultCapable(false);
@@ -163,11 +164,21 @@ public class VistaUnirseASala extends javax.swing.JFrame {
         btnAdelante.setText(">");
         btnAdelante.setBorderPainted(false);
         btnAdelante.setContentAreaFilled(false);
+        btnAdelante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdelanteActionPerformed(evt);
+            }
+        });
 
         btnAtras.setForeground(new java.awt.Color(255, 255, 255));
         btnAtras.setText("<");
         btnAtras.setBorderPainted(false);
         btnAtras.setContentAreaFilled(false);
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
 
         avatar.setForeground(new java.awt.Color(255, 255, 255));
         avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avatares/avt1.png"))); // NOI18N
@@ -271,6 +282,14 @@ public class VistaUnirseASala extends javax.swing.JFrame {
 //            ejecutarAccionUnirseASala();
 //        }
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnAdelanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdelanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdelanteActionPerformed
 
     public void setObservadorCrearSala(IObserver observadorCrearSala) {
         this.observadorCrearSala = observadorCrearSala;
