@@ -1,4 +1,4 @@
-package inicializadorYcontenedorMVC;
+ package inicializadorYcontenedorMVC;
 
 import contenedorMVC.ContenedorMVC;
 import contenedorMVC.GestorDeContenedores;
@@ -22,7 +22,7 @@ public class Inicializador {
     
     public Inicializador(){
     
-        gestor = new GestorDeContenedores();
+        gestor = GestorDeContenedores.getInstancia();
 
     }
   

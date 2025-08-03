@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package contenedorMVC;
 
 import java.util.HashMap;
@@ -12,11 +8,20 @@ import java.util.Map;
  * @author tacot
  */
 public class GestorDeContenedores {
-    private Map<String, ContenedorMVC> contenedores;
+    private static GestorDeContenedores instancia;
+    private final Map<String, ContenedorMVC> contenedores;
 
     public GestorDeContenedores() {
         contenedores = new HashMap<>();
         
+    }
+    
+    public static GestorDeContenedores getInstancia(){
+        if (instancia == null) {
+            instancia = new GestorDeContenedores();
+        }
+        
+        return instancia;
     }
     
     public void agregarContenedor(String nombre, ContenedorMVC contenedor){

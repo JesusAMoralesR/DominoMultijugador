@@ -1,5 +1,6 @@
 package LogicaPrincipal;
 
+import contenedorMVC.GestorDeContenedores;
 import inicializadorYcontenedorMVC.Inicializador;
 
 /**
@@ -9,9 +10,11 @@ import inicializadorYcontenedorMVC.Inicializador;
 public class LogicaDomino {
     
     private final Inicializador inicializador;
+    private final GestorDeContenedores gestorDeContenedores;
 
     public LogicaDomino() {
         inicializador = new Inicializador();
+        gestorDeContenedores = GestorDeContenedores.getInstancia();
     }
     
     public void inicializarClases(){
@@ -20,5 +23,7 @@ public class LogicaDomino {
     
     public void run(){
         inicializarClases();
+        gestorDeContenedores.MostrarVista("inicio");
+        
     }
 }
