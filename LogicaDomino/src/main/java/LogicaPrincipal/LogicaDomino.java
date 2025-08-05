@@ -1,6 +1,6 @@
 package LogicaPrincipal;
 
-import contenedorMVC.GestorDeContenedores;
+import gestorDeContenedores.GestorDeContenedores;
 import inicializadorYcontenedorMVC.Inicializador;
 
 /**

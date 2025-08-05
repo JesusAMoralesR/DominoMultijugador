@@ -1,5 +1,6 @@
-package contenedorMVC;
+package gestorDeContenedores;
 
+import contenedorMVC.ContenedorMVC;
 import java.util.HashMap;
 import java.util.Map;
 

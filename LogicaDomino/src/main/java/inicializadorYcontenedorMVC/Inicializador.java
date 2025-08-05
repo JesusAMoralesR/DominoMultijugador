@@ -1,7 +1,7 @@
  package inicializadorYcontenedorMVC;
 
 import contenedorMVC.ContenedorMVC;
-import contenedorMVC.GestorDeContenedores;
+import gestorDeContenedores.GestorDeContenedores;
 import crearSala.ControladorCrearSala;
 import crearSala.ModeloCrearSala;
 import crearSala.VistaCrearSala;
