@@ -1,6 +1,7 @@
 package gestorDeContenedores;
 
 import contenedorMVC.ContenedorMVC;
+import contenedorMVC.Icomponente;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,4 +42,8 @@ public class GestorDeContenedores {
         contenedores.get(nombre).getVista().setVisible(true);
     }
     
+    public Icomponente trearVista(String nombre){
+        
+        return (Icomponente) contenedores.get(nombre).getVista();
+    }
 }

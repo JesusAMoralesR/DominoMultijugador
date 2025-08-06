@@ -7,7 +7,7 @@ import observers.IObserver;
  *
  * @author tacot
  */
-public class ControladorInicio implements Icomponente{
+public class ControladorInicio implements Icomponente {
 
     private final ModeloInicio modelo;
     private final VistaInicio inicio;
@@ -15,14 +15,19 @@ public class ControladorInicio implements Icomponente{
     public ControladorInicio(ModeloInicio modelo, VistaInicio inicio) {
         this.modelo = modelo;
         this.inicio = inicio;
+        agregarObservadores();
+    }
+
+    public void agregarObservadores() {
         inicio.setObserverJugar(new AccionJugar());
         inicio.setObserverSalir(new AccionSalir());
         inicio.setObserverVolver(new AccionVolver());
-        
+        inicio.setObserverCrearSala(new AccionCrearSala());
+        inicio.setObserverUnirseASala(new AccionUnirseASala());
         
     }
-    
-    private class AccionJugar implements IObserver{
+
+    private class AccionJugar implements IObserver {
 
         public AccionJugar() {
         }
@@ -35,16 +40,16 @@ public class ControladorInicio implements Icomponente{
             modelo.ejecutarBotonJugar();
         }
     }
-    
-    private class AccionSalir implements IObserver{
+
+    private class AccionSalir implements IObserver {
 
         @Override
-        public void actualizar() {  
+        public void actualizar() {
             System.exit(0);
         }
     }
-    
-    private class AccionVolver implements IObserver{
+
+    private class AccionVolver implements IObserver {
 
         @Override
         public void actualizar() {
@@ -54,20 +59,20 @@ public class ControladorInicio implements Icomponente{
             modelo.ejecutarBotonVolver();
         }
     }
-    
-    private class AccionCrearSala implements IObserver{
+
+    private class AccionCrearSala implements IObserver {
 
         @Override
         public void actualizar() {
-
+            modelo.ejecutarCrearSala();
         }
     }
-    
-    private class AccionUnirseASala implements IObserver{
+
+    private class AccionUnirseASala implements IObserver {
 
         @Override
         public void actualizar() {
-
+            modelo.ejecutarUnirseSala();
         }
     }
 }

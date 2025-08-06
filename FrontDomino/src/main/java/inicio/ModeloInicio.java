@@ -14,7 +14,8 @@ public class ModeloInicio implements Icomponente{
     private final String rutaFondo;
     private final String rutaFuente;
     private IObserver observadorDeBoton;
-    
+    private IObserver observadorCrearSala;
+    private IObserver observadorUnirseSala;
     
     public ModeloInicio(){
     
@@ -72,5 +73,24 @@ public class ModeloInicio implements Icomponente{
     public String getRutaFuente() {
         return rutaFuente;
     }
+
+    public void setObservadorCrearSala(IObserver observadorCrearSala) {
+        this.observadorCrearSala = observadorCrearSala;
+    }
+
+    public void setObservadorUnirseSala(IObserver observadorUnirseSala) {
+        this.observadorUnirseSala = observadorUnirseSala;
+    }
     
+    public void ejecutarCrearSala(){
+        if (observadorCrearSala != null) {
+            observadorCrearSala.actualizar();
+        }
+    }
+    
+    public void ejecutarUnirseSala(){
+        if (observadorUnirseSala != null) {
+            observadorUnirseSala.actualizar();
+        }
+    }
 }

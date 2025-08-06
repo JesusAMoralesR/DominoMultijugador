@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mensajeAlerta;
+package fachadaInicio;
 
-import unirseASala.*;
+import fachadaCrearSala.*;
 
 /**
  *
  * @author tacot
  */
-public class ControladorUnirseASala {
+public class LogicaInicio {
     
 }
