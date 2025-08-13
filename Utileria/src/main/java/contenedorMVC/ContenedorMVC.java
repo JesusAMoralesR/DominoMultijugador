@@ -7,9 +7,9 @@ import javax.swing.JFrame;
  * @author tacot
  */
 public class ContenedorMVC {
-    private Icomponente modelo;
-    private Icomponente vista;
-    private Icomponente Controlador;
+    private final Icomponente modelo;
+    private final Icomponente vista;
+    private final Icomponente Controlador;
 
     public ContenedorMVC(Icomponente modelo, Icomponente vista, Icomponente Controlador) {
         this.modelo = modelo;
@@ -17,9 +17,16 @@ public class ContenedorMVC {
         this.Controlador = Controlador;
     }
 
+    public Icomponente getModelo() {
+        return modelo;
+    }
+
     public JFrame getVista() {
         return (JFrame) vista;
     }
-    
+
+    public Icomponente getControlador() {
+        return Controlador;
+    }
     
 }

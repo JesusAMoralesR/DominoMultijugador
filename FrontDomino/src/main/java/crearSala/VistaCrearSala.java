@@ -13,6 +13,8 @@ import ItemsConFondo.PanelConFondo;
 import contenedorMVC.Icomponente;
 import itemsRedondeados.TextFieldRedondeado;
 import javax.swing.ImageIcon;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import observers.IObserver;
 
 /**
@@ -45,7 +47,7 @@ public class VistaCrearSala extends javax.swing.JFrame implements Icomponente {
         modelo.setObservadorAvatar(new AccionAvatar());
         initComponents();
         cargarEstilos(urlFuente);
-        txtAvatar.setIcon(new ImageIcon(modelo.getImagen()));
+        avatar.setIcon(new ImageIcon(modelo.getImagen()));
 
         
     }
@@ -113,6 +115,7 @@ public class VistaCrearSala extends javax.swing.JFrame implements Icomponente {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        PanelPricipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PanelPricipal.setPreferredSize(new java.awt.Dimension(1024, 624));
 
         btnCrear.setBackground(new java.awt.Color(192, 163, 115));
@@ -292,7 +295,7 @@ public class VistaCrearSala extends javax.swing.JFrame implements Icomponente {
                             .addComponent(btnSiguienteAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAnteriorAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(avatar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(PanelPricipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -338,7 +341,7 @@ public class VistaCrearSala extends javax.swing.JFrame implements Icomponente {
         this.rbtn4.setSelected(false);
         this.rbtn7.setSelected(false);
     }//GEN-LAST:event_rbtn6ActionPerformed
-
+    
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         ejecutarObservadorCancelar();
     }//GEN-LAST:event_btnCancelarActionPerformed
@@ -388,7 +391,7 @@ public class VistaCrearSala extends javax.swing.JFrame implements Icomponente {
     }
 
     public void ejectutarAccionAvatar() {
-        txtAvatar.setIcon(new ImageIcon(modelo.getImagen()));
+        avatar.setIcon(new ImageIcon(modelo.getImagen()));
         repaint();
     }
 
@@ -398,6 +401,26 @@ public class VistaCrearSala extends javax.swing.JFrame implements Icomponente {
         public void actualizar() {
             ejectutarAccionAvatar();
         }
+    }
+
+    public JTextField getTFnombre() {
+        return TFnombre;
+    }
+
+    public JRadioButton getRbtn4() {
+        return rbtn4;
+    }
+
+    public JRadioButton getRbtn5() {
+        return rbtn5;
+    }
+
+    public JRadioButton getRbtn6() {
+        return rbtn6;
+    }
+
+    public JRadioButton getRbtn7() {
+        return rbtn7;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

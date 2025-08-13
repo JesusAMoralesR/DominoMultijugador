@@ -13,44 +13,47 @@ import ItemsConFondo.PanelConFondo;
 import contenedorMVC.Icomponente;
 import itemsRedondeados.TextFieldRedondeado;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import observers.IObserver;
 
 /**
  *
  * @author tacot
  */
-public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
+public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaUnirseASala.class.getName());
     private final ModeloUnirseASala modelo;
     private final String urlFondo;
     private final String urlFuente;
-    private IObserver observadorCrearSala;
+    private IObserver observadorUnirseSala;
     private IObserver observadorCancelar;
     private IObserver observadorSiguienteAvatar;
     private IObserver observadorAnteriorAvatar;
 
     /**
      * Creates new form VistaUnirseASala
+     * @param modeloUnirseASala
      */
-    public VistaUnirseASala() {
-        
+    public VistaUnirseASala(ModeloUnirseASala modeloUnirseASala) {
+
         this.setUndecorated(true);
-        modelo = new ModeloUnirseASala();
+        modelo = modeloUnirseASala;
         urlFondo = modelo.getRutaFondo();
         urlFuente = modelo.getRutaFuente();
-        modelo.setObservadorAvatar(new AccionAvatar());
         initComponents();
         cargarEstilos(urlFuente);
-        txtAvatar.setIcon(new ImageIcon(modelo.getImagen()));
+        avatar.setIcon(new ImageIcon(modelo.getImagen()));
+        modelo.setObservadorAvatar(new AccionAvatar());
     }
-    
-     /**
+
+    /**
      * Metodo que permite cargar estilos personalizados en el programa
      *
      * @param fuente
      */
-    public void cargarEstilos(String fuente) {
+    public final void cargarEstilos(String fuente) {
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
 
@@ -58,7 +61,7 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
             txtNombreJugador.setFont(VistaInicio.cargarFuente(fuente, 30f));
             TFnombre.setFont(VistaInicio.cargarFuente(fuente, 30f));
             txtFichas.setFont(VistaInicio.cargarFuente(fuente, 30f));
-            TFfichas.setFont(VistaInicio.cargarFuente(fuente, 30f));
+            TFcodigo.setFont(VistaInicio.cargarFuente(fuente, 30f));
             txtAvatar.setFont(VistaInicio.cargarFuente(fuente, 30f));
             btnAtras.setFont(VistaInicio.cargarFuente(fuente, 30f));
             btnAdelante.setFont(VistaInicio.cargarFuente(fuente, 30f));
@@ -93,7 +96,7 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
         btnCancelar = new BotonRedondeado();
         txtNombreJugador = new javax.swing.JLabel();
         TFnombre = new TextFieldRedondeado(10);
-        TFfichas = new TextFieldRedondeado(10);
+        TFcodigo = new TextFieldRedondeado(10);
         txtFichas = new javax.swing.JLabel();
         txtAvatar = new javax.swing.JLabel();
         btnAdelante = new javax.swing.JButton();
@@ -102,6 +105,7 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        PanelPricipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PanelPricipal.setPreferredSize(new java.awt.Dimension(1024, 624));
 
         btnCrear.setBackground(new java.awt.Color(192, 163, 115));
@@ -120,7 +124,7 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
 
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
         txtTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtTitulo.setText("Crear sala");
+        txtTitulo.setText("Unirse a sala");
         txtTitulo.setPreferredSize(new java.awt.Dimension(275, 61));
 
         btnCancelar.setBackground(new java.awt.Color(192, 163, 115));
@@ -145,10 +149,10 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
         TFnombre.setForeground(new java.awt.Color(0, 0, 0));
         TFnombre.setPreferredSize(new java.awt.Dimension(275, 61));
 
-        TFfichas.setBackground(new java.awt.Color(255, 255, 255));
-        TFfichas.setForeground(new java.awt.Color(0, 0, 0));
-        TFfichas.setToolTipText("Numero de fichas con las que va a iniciar el juego");
-        TFfichas.setPreferredSize(new java.awt.Dimension(275, 61));
+        TFcodigo.setBackground(new java.awt.Color(255, 255, 255));
+        TFcodigo.setForeground(new java.awt.Color(0, 0, 0));
+        TFcodigo.setToolTipText("Numero de fichas con las que va a iniciar el juego");
+        TFcodigo.setPreferredSize(new java.awt.Dimension(275, 61));
 
         txtFichas.setForeground(new java.awt.Color(255, 255, 255));
         txtFichas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -197,7 +201,7 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
                 .addGap(160, 160, 160)
                 .addGroup(PanelPricipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelPricipalLayout.createSequentialGroup()
-                        .addComponent(TFfichas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PanelPricipalLayout.createSequentialGroup()
                         .addGroup(PanelPricipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,8 +247,8 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
                             .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(avatar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TFfichas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(PanelPricipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,40 +271,31 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-//        if (modelo.getEstadoBotones()) {
-//            ejecutarAccionJugar();
-//            this.btnVolver.setVisible(true);
-//        } else {
-//            ejecutarAccionCrearSala();
-//        }
+        ejecutarObservadorUnirseASala();
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-//        if (modelo.getEstadoBotones()) {
-//            ejecutarAccionSalir();
-//        } else {
-//            ejecutarAccionUnirseASala();
-//        }
+        ejecutarObservadorCancelar();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        // TODO add your handling code here:
+        ejecutarObservadorAnteriorAvatar();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnAdelanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdelanteActionPerformed
-        // TODO add your handling code here:
+        ejecutarObservadorSiguienteAvatar();
     }//GEN-LAST:event_btnAdelanteActionPerformed
 
-    public void setObservadorCrearSala(IObserver observadorCrearSala) {
-        this.observadorCrearSala = observadorCrearSala;
+    public void setObservadorCrearSala(IObserver observadorUnirseSala) {
+        this.observadorUnirseSala = observadorUnirseSala;
     }
 
     public void setObservadorCanselar(IObserver observadorCancelar) {
         this.observadorCancelar = observadorCancelar;
     }
 
-    public void ejecutarObservadorCrearSala() {
-        this.observadorCrearSala.actualizar();
+    public void ejecutarObservadorUnirseASala() {
+        this.observadorUnirseSala.actualizar();
     }
 
     public void ejecutarObservadorCancelar() {
@@ -324,7 +319,7 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
     }
 
     public void ejectutarAccionAvatar() {
-        txtAvatar.setIcon(new ImageIcon(modelo.getImagen()));
+        avatar.setIcon(new ImageIcon(modelo.getImagen()));
         repaint();
     }
 
@@ -335,9 +330,23 @@ public class VistaUnirseASala extends javax.swing.JFrame implements Icomponente{
             ejectutarAccionAvatar();
         }
     }
+
+    public JTextField getTFcodigo() {
+        return TFcodigo;
+    }
+
+    public JTextField getTFnombre() {
+        return TFnombre;
+    }
+
+    public JLabel getAvatar() {
+        return avatar;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelPricipal;
-    private javax.swing.JTextField TFfichas;
+    private javax.swing.JTextField TFcodigo;
     private javax.swing.JTextField TFnombre;
     private javax.swing.JLabel avatar;
     private javax.swing.JButton btnAdelante;

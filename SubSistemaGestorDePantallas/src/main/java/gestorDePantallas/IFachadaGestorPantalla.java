@@ -5,11 +5,17 @@
 package gestorDePantallas;
 
 import fachadaCrearSala.*;
+import observers.IObserver;
+import observers.IObserverCrearSala;
+import observers.IObserverMensajeAlerta;
+import observers.IObserverUnirseASala;
 
 /**
  *
  * @author tacot
  */
 public interface IFachadaGestorPantalla {
-    
+    public void agregarObservers(IObserver AccionEnInicioCrearSala, IObserver AccionEnIniciUnirseASala, 
+            IObserverUnirseASala AccionUnirseASala, IObserver AccionCancelar, 
+            IObserverCrearSala AccionCrearSala, IObserverMensajeAlerta AccionMostrarMensaje);
 }

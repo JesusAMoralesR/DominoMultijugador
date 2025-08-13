@@ -1,12 +1,13 @@
 package unirseASala;
 
+import ObjetosDeEventos.EventoUnirseASala;
 import contenedorMVC.Icomponente;
 import crearSala.ModeloCrearSala;
 import java.awt.Image;
-import java.util.LinkedList;
-import java.util.List;
 import javax.swing.ImageIcon;
 import observers.IObserver;
+import observers.IObserverMensajeAlerta;
+import observers.IObserverUnirseASala;
 
 /**
  *
@@ -17,9 +18,10 @@ public class ModeloUnirseASala implements Icomponente{
     private String rutaFondo;
     private String rutaFuente;
     private String url;
-    private IObserver observadorCrearSala;
+    private IObserverUnirseASala observadorUnirseSala;
     private IObserver observadorCancelar;
     private IObserver observadorAvatar;
+    private IObserverMensajeAlerta observerValidacionFallida;
     private Image imagen;
 
     public ModeloUnirseASala() {
@@ -28,7 +30,7 @@ public class ModeloUnirseASala implements Icomponente{
 
     }
 
-    public void cargarFuentes() {
+    public final void cargarFuentes() {
 
         rutaFondo = "/imagenes/fondo/fondoPrincipal.png";
         rutaFuente = "/fuentes/InknutAntiqua-Regular.ttf";
@@ -56,6 +58,7 @@ public class ModeloUnirseASala implements Icomponente{
 
     public void CambiarAvatar(int index) {
         imagen = new ImageIcon(ModeloCrearSala.class.getResource(url +index + ".png")).getImage();
+        System.out.println(url +index + ".png");
         ejecutarObservadorAvatar();
     }
 
@@ -63,8 +66,8 @@ public class ModeloUnirseASala implements Icomponente{
         return imagen;
     }
 
-    public void setObservadorCrearSala(IObserver observadorCrearSala) {
-        this.observadorCrearSala = observadorCrearSala;
+    public void setObservadorUnirseSala(IObserverUnirseASala observadorCrearSala) {
+        this.observadorUnirseSala = observadorCrearSala;
     }
 
     public void setObservadorCanselar(IObserver observadorCancelar) {
@@ -74,17 +77,38 @@ public class ModeloUnirseASala implements Icomponente{
     public void setObservadorAvatar(IObserver observadorAvatar) {
         this.observadorAvatar = observadorAvatar;
     }
+
+    public void setObserverValidacionFallida(IObserverMensajeAlerta observerValidacionFallida) {
+        this.observerValidacionFallida = observerValidacionFallida;
+    }
     
-    public void ejecutarObservadorCrearSala(){
-        this.observadorCrearSala.actualizar();
+    public void ejecutarObservadorUnirseSala(EventoUnirseASala objetoUnirseAsala){
+        
+        if (this.observadorUnirseSala !=null) {
+            this.observadorUnirseSala.actualizar(objetoUnirseAsala);
+        }
+        
     }
     
     public void ejecutarObservadorCancelar(){
-        this.observadorCancelar.actualizar();
+        if (this.observadorCancelar !=null) {
+            this.observadorCancelar.actualizar();
+        }
+        
     }
     
     public void ejecutarObservadorAvatar(){
-        this.observadorAvatar.actualizar();
+        if (this.observadorAvatar !=null) {
+            this.observadorAvatar.actualizar();
+        }
+        
+    }
+    
+    public void ejecutarObserverValidacionFallida(String mensaje){
+        if (this.observerValidacionFallida !=null) {
+            this.observerValidacionFallida.actualizar(mensaje);
+        }
+        
     }
 
 }
