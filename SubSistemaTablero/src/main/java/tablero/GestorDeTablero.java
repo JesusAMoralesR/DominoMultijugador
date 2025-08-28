@@ -7,6 +7,7 @@ package tablero;
 import ObjetosDeEventos.DireccionDeMovimiento;
 import static ObjetosDeEventos.DireccionDeMovimiento.Izquierda;
 import ObjetosDeEventos.Ficha;
+import ObjetosDeEventos.OrientacionDeFichas;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +20,7 @@ import java.util.Map;
  */
 public class GestorDeTablero {
 
-    private Ficha[][] tablero = new Ficha[9][20];
+    private Ficha[][] tablero;
     private Point extremo1;
     private Point extremo2;
     private final int limiteIZQ = 0;
@@ -27,7 +28,11 @@ public class GestorDeTablero {
     private final int limiteARR = 0;
     private final int limiteABA = 8;
 
-    public void colocarFicha(Point celda1, Point celda2, Ficha ficha) {
+    public GestorDeTablero() {
+        tablero = new Ficha[9][20];
+    }
+
+    public void colocarFichaEnArreglo(Point celda1, Point celda2, Ficha ficha) {
 
         if (tableroVacio()) {
             extremo1 = celda1;
@@ -39,25 +44,50 @@ public class GestorDeTablero {
         tablero[celda2.y][celda2.x] = ficha;
     }
 
+    public void colocarFichaMulaEnArreglo(Point celda1, Point celda2, Point celda3, Ficha ficha) {
+
+        if (tableroVacio()) {
+            extremo1 = celda2;
+            extremo2 = celda2;
+
+        }
+
+        tablero[celda1.y][celda1.x] = ficha;
+        tablero[celda2.y][celda2.x] = ficha;
+        tablero[celda3.y][celda3.x] = ficha;
+    }
+
     public void limpiarTablero() {
         tablero = new Ficha[9][20];
     }
 
-    public Map<DireccionDeMovimiento, List<Point>> movimientosPosibles(Ficha ficha) {
-
+    public Map<DireccionDeMovimiento, List<Point>> movimientosPosibles(Ficha ficha, OrientacionDeFichas orientacion) {
         if (!fichaJugable(ficha)) {
             return null;
         }
 
-        Map<DireccionDeMovimiento, List<Point>> movimientosPosiblesFicha = new HashMap<>();
+        Map<DireccionDeMovimiento, List<Point>> movimientos = new HashMap<>();
 
-        movimientosPosiblesFicha.put(DireccionDeMovimiento.Izquierda, movimientoPosible(DireccionDeMovimiento.Izquierda));
-        movimientosPosiblesFicha.put(DireccionDeMovimiento.Derecha, movimientoPosible(DireccionDeMovimiento.Derecha));
-        movimientosPosiblesFicha.put(DireccionDeMovimiento.Arriba, movimientoPosible(DireccionDeMovimiento.Arriba));
-        movimientosPosiblesFicha.put(DireccionDeMovimiento.Abajo, movimientoPosible(DireccionDeMovimiento.Abajo));
+        if (null == orientacion) {
+            movimientos.put(DireccionDeMovimiento.Izquierda, movimientoPosible(DireccionDeMovimiento.Izquierda));
+            movimientos.put(DireccionDeMovimiento.Derecha, movimientoPosible(DireccionDeMovimiento.Derecha));
+            movimientos.put(DireccionDeMovimiento.Arriba, movimientoPosible(DireccionDeMovimiento.Arriba));
+            movimientos.put(DireccionDeMovimiento.Abajo, movimientoPosible(DireccionDeMovimiento.Abajo));
+            
+        } else {
+            switch (orientacion) {
+                case Horizontal -> {
+                    movimientos.put(DireccionDeMovimiento.Izquierda, movimientoPosible(DireccionDeMovimiento.Izquierda));
+                    movimientos.put(DireccionDeMovimiento.Derecha, movimientoPosible(DireccionDeMovimiento.Derecha));
+                }
+                case Vertical -> {
+                    movimientos.put(DireccionDeMovimiento.Arriba, movimientoPosible(DireccionDeMovimiento.Arriba));
+                    movimientos.put(DireccionDeMovimiento.Abajo, movimientoPosible(DireccionDeMovimiento.Abajo));
+                }
+            }
+        }
 
-        return movimientosPosiblesFicha;
-
+        return movimientos;
     }
 
     private List<Point> movimientoPosible(DireccionDeMovimiento direccion) {
@@ -67,18 +97,18 @@ public class GestorDeTablero {
         Point celdaSiguienteEX1 = calcularCeldaSiguiente(direccion, extremo1);
         Point celdaSiguienteEX2 = calcularCeldaSiguiente(direccion, extremo2);
 
-        if (celdaSiguienteEX1.x >= limiteIZQ && celdaSiguienteEX1.x <= limiteDER && celdaSiguienteEX1.y <= limiteARR && celdaSiguienteEX1.y >= limiteABA) {
+        if (celdaSiguienteEX1.x >= limiteIZQ && celdaSiguienteEX1.x <= limiteDER && celdaSiguienteEX1.y >= limiteARR && celdaSiguienteEX1.y <= limiteABA) {
             if (tablero[celdaSiguienteEX1.y][celdaSiguienteEX1.x] == null) {
                 posiblesMovimientos.add(new Point(celdaSiguienteEX1.x, celdaSiguienteEX1.y));
             }
         }
-        
+
         if (celdaSiguienteEX2.x >= limiteIZQ && celdaSiguienteEX2.x <= limiteDER && celdaSiguienteEX2.y <= limiteARR && celdaSiguienteEX2.y >= limiteABA) {
             if (tablero[celdaSiguienteEX2.y][celdaSiguienteEX2.x] == null) {
                 posiblesMovimientos.add(new Point(celdaSiguienteEX2.x, celdaSiguienteEX2.y));
             }
         }
-        
+
         return posiblesMovimientos;
     }
 

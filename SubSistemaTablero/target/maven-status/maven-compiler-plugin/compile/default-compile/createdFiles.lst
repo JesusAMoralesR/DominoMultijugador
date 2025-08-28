@@ -1,5 +1,7 @@
 tablero\GestorDeTablero$1.class
 tablero\GestorDeTablero.class
 tablero\pruebaTablero.class
+tablero\GestorDeJugadores.class
 tablero\FachadaTablero.class
+tablero\GesotorDePartida.class
 tablero\IFachadaTablero.class

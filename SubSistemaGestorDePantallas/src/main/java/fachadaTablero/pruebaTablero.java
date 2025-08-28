@@ -1,9 +1,7 @@
-package tablero;
+package fachadaTablero;
 
-import ObjetosDeEventos.Ficha;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -23,14 +21,14 @@ public class pruebaTablero extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(pruebaTablero.class.getName());
 
-    private final Map<Point, Component> componentesEnPantalla = new HashMap<>();
+    private final Map<Point, Component> componentesEnPantalla;
 
     /**
      * Creates new form pruebaTablero
      */
     public pruebaTablero() {
         initComponents();
-        Color colorPersonalizado = new Color(161, 136, 93);
+        componentesEnPantalla = new HashMap<>();
         for (int i = 10; i > -1; i--) {
             for (int j = 0; j < 20; j++) {
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -52,74 +50,8 @@ public class pruebaTablero extends javax.swing.JFrame {
 
             }
         }
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 5;           // columna
-        gbc.gridy = 4;           // empieza en la fila superior
-        gbc.gridheight = 3;      // ocupa 3 filas
-        gbc.gridwidth = 1;       // solo una columna
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-
-// Márgenes: arriba y abajo 25% de celda
-        gbc.insets = new Insets(20, 0, 20, 0);  // (arriba, izq, abajo, der)
-
-        JLabel fichaMula = new JLabel("MULA", SwingConstants.CENTER);
-        fichaMula.setFont(new Font("Arial", Font.BOLD, 14));
-        fichaMula.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fichaMula.setOpaque(true);
-        fichaMula.setBackground(Color.ORANGE);
-
-// remplazas las 3 celdas ocupadas
-        Component espacio52 = componentesEnPantalla.get(new Point(5, 4));
-        Component espacio53 = componentesEnPantalla.get(new Point(5, 5));
-        Component espacio54 = componentesEnPantalla.get(new Point(5, 6));
-
-        componentesEnPantalla.replace(new Point(5, 4), fichaMula);
-        componentesEnPantalla.replace(new Point(5, 5), fichaMula);
-        componentesEnPantalla.replace(new Point(5, 6), fichaMula);
-
-        PanelPrincipal.remove(espacio52);
-        PanelPrincipal.remove(espacio53);
-        PanelPrincipal.remove(espacio54);
-
-        PanelPrincipal.add(fichaMula, gbc);
         
         
-        
-        gbc.gridx = 8;           // columna
-        gbc.gridy = 6;           // empieza en la fila superior
-        gbc.gridheight = 1;      // ocupa 3 filas
-        gbc.gridwidth = 3;       // solo una columna
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.fill = GridBagConstraints.BOTH;
-
-// Márgenes: arriba y abajo 25% de celda
-        gbc.insets = new Insets(0, 30, 0, 30);  // (arriba, izq, abajo, der)
-
-        JLabel fichaMula2 = new JLabel("MULA", SwingConstants.CENTER);
-        fichaMula2.setFont(new Font("Arial", Font.BOLD, 14));
-        fichaMula2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        fichaMula2.setOpaque(true);
-        fichaMula2.setBackground(Color.ORANGE);
-
-// remplazas las 3 celdas ocupadas
-        Component espacio84 = componentesEnPantalla.get(new Point(8, 4));
-        Component espacio94 = componentesEnPantalla.get(new Point(9, 4));
-        Component espacio104 = componentesEnPantalla.get(new Point(10, 4));
-
-        componentesEnPantalla.replace(new Point(8, 4), fichaMula);
-        componentesEnPantalla.replace(new Point(9, 4), fichaMula);
-        componentesEnPantalla.replace(new Point(10, 4), fichaMula);
-
-        PanelPrincipal.remove(espacio84);
-        PanelPrincipal.remove(espacio94);
-        PanelPrincipal.remove(espacio104);
-
-        PanelPrincipal.add(fichaMula2, gbc);
-
     }
 
     /**

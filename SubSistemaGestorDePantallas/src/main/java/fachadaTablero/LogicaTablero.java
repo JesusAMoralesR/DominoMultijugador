@@ -4,7 +4,6 @@
  */
 package fachadaTablero;
 
-import fachadaCrearSala.*;
 
 /**
  *

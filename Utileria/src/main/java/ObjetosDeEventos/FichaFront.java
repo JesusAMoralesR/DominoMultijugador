@@ -3,7 +3,6 @@ package ObjetosDeEventos;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -14,12 +13,10 @@ import javax.swing.SwingConstants;
  */
 public class FichaFront extends JLabel{
 
-    private final GridBagConstraints gbc;
     private final Color colorPersonalizado = new Color(161, 136, 93);
     
     public FichaFront(int num1, int num2, int horizontalAligment) {
         super(num1 + ":" + num2, SwingConstants.CENTER);
-        gbc = new GridBagConstraints();
         
         this.setPreferredSize(new Dimension(48, 34));
         this.setFont(new Font("Arial", Font.BOLD, 14));

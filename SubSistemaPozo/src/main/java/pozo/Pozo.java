@@ -21,7 +21,7 @@ public class Pozo {
         llenarPozo();
     }
 
-    public final void llenarPozo() {
+    private void llenarPozo() {
         for (int i = 0; i < 7; i++) {
             for (int j = i; j < 7; j++) {
                 fichasPozo.add(new Ficha(i, j));
@@ -72,7 +72,6 @@ public class Pozo {
         fichasPozo.addAll(fichas);
         System.out.println(fichasPozo.size());
     }
-    
     
     public void reiniciarPozo(){
         fichasPozo = new ArrayList<>();
