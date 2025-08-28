@@ -4,7 +4,7 @@
  */
 package pozo;
 
-import dominio.Ficha;
+import ObjetosDeEventos.Ficha;
 import java.util.ArrayList;
 import java.util.List;
 

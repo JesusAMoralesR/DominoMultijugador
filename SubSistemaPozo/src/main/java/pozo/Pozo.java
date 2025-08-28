@@ -1,6 +1,6 @@
 package pozo;
 
-import dominio.Ficha;
+import ObjetosDeEventos.Ficha;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
