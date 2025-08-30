@@ -1,8 +1,8 @@
 package tablero;
 
-import ObjetosDeEventos.DireccionDeMovimiento;
-import ObjetosDeEventos.Ficha;
-import ObjetosDeEventos.OrientacionDeFichas;
+import enums.DireccionDeMovimiento;
+import objetosPartida.Ficha;
+import enums.OrientacionDeFichas;
 import java.awt.Point;
 import java.util.List;
 import java.util.Map;

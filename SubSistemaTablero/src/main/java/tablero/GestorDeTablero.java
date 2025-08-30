@@ -4,10 +4,10 @@
  */
 package tablero;
 
-import ObjetosDeEventos.DireccionDeMovimiento;
-import static ObjetosDeEventos.DireccionDeMovimiento.Izquierda;
-import ObjetosDeEventos.Ficha;
-import ObjetosDeEventos.OrientacionDeFichas;
+import enums.DireccionDeMovimiento;
+import static enums.DireccionDeMovimiento.Izquierda;
+import objetosPartida.Ficha;
+import enums.OrientacionDeFichas;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;

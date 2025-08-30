@@ -1,7 +1,7 @@
 package LogicaPrincipal;
 
-import ObjetosDeEventos.EventoCrearSala;
-import ObjetosDeEventos.EventoUnirseASala;
+import objetosDeEventos.EventoCrearSala;
+import objetosDeEventos.EventoUnirseASala;
 import gestorDeContenedores.FachadaContenedores;
 import gestorDeContenedores.IFachadaContenedores;
 import gestorDePantallas.IFachadaGestorPantalla;

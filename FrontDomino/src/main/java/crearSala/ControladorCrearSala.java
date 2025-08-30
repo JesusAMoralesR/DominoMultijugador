@@ -1,7 +1,9 @@
 package crearSala;
 
-import ObjetosDeEventos.EventoCrearSala;
+import objetosDeEventos.EventoCrearSala;
 import contenedorMVC.Icomponente;
+import java.awt.Image;
+import objetosPartida.Jugador;
 import observers.IObserver;
 
 /**
@@ -34,10 +36,15 @@ public class ControladorCrearSala implements Icomponente {
     public void ejecutarAccionCrearSala() {
 
         if (validacionesParaCrearSala()) {
-            EventoCrearSala eventoCrearSala = new EventoCrearSala();
-            eventoCrearSala.setAvatar(modelo.getImagen());
-            eventoCrearSala.setNombre(vista.getTFnombre().getText());
-            eventoCrearSala.setNumFichas(getNumeroDeFichas());
+            Image avatar = modelo.getImagen();
+            
+            String nombre = vista.getTFnombre().getText();
+            
+            Jugador jugador = new Jugador(nombre, avatar);
+            
+            int numFichas = getNumeroDeFichas();
+            
+            EventoCrearSala eventoCrearSala = new EventoCrearSala(jugador, numFichas);
             modelo.ejecutarObservadorCrearSala(eventoCrearSala);
         }
     }

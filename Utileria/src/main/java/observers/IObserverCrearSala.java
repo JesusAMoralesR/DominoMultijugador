@@ -4,7 +4,7 @@
  */
 package observers;
 
-import ObjetosDeEventos.EventoCrearSala;
+import objetosDeEventos.EventoCrearSala;
 
 /**
  *

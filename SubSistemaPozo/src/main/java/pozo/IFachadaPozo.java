@@ -1,6 +1,6 @@
 package pozo;
 
-import ObjetosDeEventos.Ficha;
+import objetosPartida.Ficha;
 import java.util.List;
 import java.util.Map;
 

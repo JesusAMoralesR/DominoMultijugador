@@ -1,6 +1,6 @@
 package unirseASala;
 
-import ObjetosDeEventos.EventoUnirseASala;
+import objetosDeEventos.EventoUnirseASala;
 import contenedorMVC.Icomponente;
 import crearSala.ModeloCrearSala;
 import java.awt.Image;

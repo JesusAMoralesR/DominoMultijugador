@@ -1,4 +1,4 @@
-package ObjetosDeEventos;
+package objetosPartida;
 
 import java.awt.Color;
 import java.awt.Dimension;

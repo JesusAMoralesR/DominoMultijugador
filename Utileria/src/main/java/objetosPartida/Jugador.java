@@ -1,4 +1,4 @@
-package ObjetosDeEventos;
+package objetosPartida;
 
 import java.awt.Image;
 
@@ -6,13 +6,18 @@ import java.awt.Image;
  *
  * @author tacot
  */
-public class EventoCrearSala {
+public class Jugador {
+    
     private String nombre;
-    private int numFichas;
     private Image avatar;
     private Nodo nodo;
 
-    public EventoCrearSala() {
+    public Jugador() {
+    }
+
+    public Jugador(String nombre, Image avatar) {
+        this.nombre = nombre;
+        this.avatar = avatar;
     }
 
     public String getNombre() {
@@ -23,12 +28,12 @@ public class EventoCrearSala {
         this.nombre = nombre;
     }
 
-    public int getNumFichas() {
-        return numFichas;
+    public Image getAvatar() {
+        return avatar;
     }
 
-    public void setNumFichas(int numFichas) {
-        this.numFichas = numFichas;
+    public void setAvatar(Image avatar) {
+        this.avatar = avatar;
     }
 
     public Nodo getNodo() {
@@ -39,11 +44,4 @@ public class EventoCrearSala {
         this.nodo = nodo;
     }
 
-    public Image getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(Image avatar) {
-        this.avatar = avatar;
-    }
 }

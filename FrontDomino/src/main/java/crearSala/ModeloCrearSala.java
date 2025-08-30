@@ -1,6 +1,6 @@
 package crearSala;
 
-import ObjetosDeEventos.EventoCrearSala;
+import objetosDeEventos.EventoCrearSala;
 import contenedorMVC.Icomponente;
 import java.awt.Image;
 import javax.swing.ImageIcon;

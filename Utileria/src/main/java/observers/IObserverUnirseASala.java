@@ -1,6 +1,6 @@
 package observers;
 
-import ObjetosDeEventos.EventoUnirseASala;
+import objetosDeEventos.EventoUnirseASala;
 
 /**
  *

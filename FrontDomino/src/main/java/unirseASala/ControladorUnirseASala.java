@@ -1,8 +1,9 @@
 package unirseASala;
 
-import ObjetosDeEventos.EventoUnirseASala;
+import objetosDeEventos.EventoUnirseASala;
 import contenedorMVC.Icomponente;
 import java.awt.Image;
+import objetosPartida.Jugador;
 import observers.IObserver;
 
 /**
@@ -39,10 +40,9 @@ public class ControladorUnirseASala implements Icomponente {
             String codigo = vista.getTFcodigo().getText();
             Image avatar = modelo.getImagen();
 
-            EventoUnirseASala eventoUnirseASala = new EventoUnirseASala();
-            eventoUnirseASala.setAvatar(avatar);
-            eventoUnirseASala.setCodigo(codigo);
-            eventoUnirseASala.setNombreJugador(nombre);
+            Jugador jugador = new Jugador(nombre, avatar);
+            
+            EventoUnirseASala eventoUnirseASala = new EventoUnirseASala(codigo, jugador);
 
             modelo.ejecutarObservadorUnirseSala(eventoUnirseASala);
         }

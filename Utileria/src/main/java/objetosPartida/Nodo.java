@@ -1,15 +1,20 @@
-package ObjetosDeEventos;
+package objetosPartida;
 
 /**
  *
  * @author tacot
  */
 public class Nodo {
-    
+
     private String ip;
     private int puerto;
 
     public Nodo() {
+    }
+
+    public Nodo(String ip, int puerto) {
+        this.ip = ip;
+        this.puerto = puerto;
     }
 
     public String getIp() {
@@ -27,7 +32,5 @@ public class Nodo {
     public void setPuerto(int puerto) {
         this.puerto = puerto;
     }
-    
-    
-    
+
 }
